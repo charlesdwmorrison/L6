@@ -1,9 +1,6 @@
 # L6
 L6 is a C# .Net Core load generator. L6 supports correlation and is a replacement for the deprecated Visual Studio Load Test too.
 
-What is L6?
-L6 is a C#, .Net core load generator, similar to PhoenixRunner. (In fact, the PerformanceViolationChecker class and the logging classes are exactly the same as in PhoenixRunner.)
-
 The big improvement of L6 compared to PhoenixRunner is the ability to do correlation. To get correlation I had to build a new load generator.
 
 In PhoenixRunner, the requests were "Pre-built" and stuffed into a collection before any of them were sent. With this approach, PhoenixRunner  could add new data to each request, but it could not look at the response from one request and use a piece of the data in the next request. The requests were all "pre-built" prior to sending and could not use data from a previous response.
