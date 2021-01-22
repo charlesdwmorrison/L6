@@ -1,4 +1,3 @@
-using ADP_DAP_LoadTest;
 using APD_DAP.UnitTests.MockWebServer;
 using L6;
 using NUnit.Framework;
@@ -26,28 +25,28 @@ namespace L6_UnitTests_MockWebServer
          
 
 
-        [Test]
-        public async Task Mock_MultiUser_100Users()
-        {
-            UserController uc = new UserController();
-            await Task.Run(() => uc.RampUpUsers(S01_MockWS.ClickPathAndIterations, newUserEvery: 1000, maxUsers: 100, testDurationSecs: 20));
+        //[Test]
+        //public async Task Mock_MultiUser_100Users()
+        //{
+        //    UserController uc = new UserController();
+        //    await Task.Run(() => uc.RampUpUsers(S01_MockWS.ClickPathAndIterations, newUserEvery: 1000, maxUsers: 100, testDurationSecs: 20));
 
-            PerformanceViolationChecker pvc = new PerformanceViolationChecker();
+        //    PerformanceViolationChecker pvc = new PerformanceViolationChecker();
 
-            var perfMetrics = pvc.CalcualteAllMetrics(SendRequests.conCurResponseDict);
-        }
+        //    var perfMetrics = pvc.CalcualteAllMetrics(SendRequests.conCurResponseDict);
+        //}
 
 
-        [Test]
-        public async Task Mock_MultiUser_100Users_Alt()
-        {
-            UserController uc = new UserController();
-            await Task.Run(() => uc.RampUpUsers(S01_MockWS.ClickPathAndIterations, newUserEvery: 2000, maxUsers: 100, testDurationSecs: 200));
+        //[Test]
+        //public async Task Mock_MultiUser_100Users_Alt()
+        //{
+        //    UserController uc = new UserController();
+        //    await Task.Run(() => uc.RampUpUsers(S01_MockWS.ClickPathAndIterations, newUserEvery: 2000, maxUsers: 100, testDurationSecs: 200));
 
-            PerformanceViolationChecker pvc = new PerformanceViolationChecker();
+        //    PerformanceViolationChecker pvc = new PerformanceViolationChecker();
 
-            var perfMetrics = pvc.CalcualteAllMetrics(SendRequests.conCurResponseDict);
-        }
+        //    var perfMetrics = pvc.CalcualteAllMetrics(SendRequests.conCurResponseDict);
+        //}
 
 
 

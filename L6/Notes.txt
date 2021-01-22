@@ -1,0 +1,12 @@
+﻿
+The solution uses NON concurrent collections whereever possible. This is because a well-structured solution does not need it.
+this is particularly true when it comes to 
+
+
+
+
+I think it will always finish the script 
+
+
+
+No constant load pattern because I don't believe in them 

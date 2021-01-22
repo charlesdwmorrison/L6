@@ -11,13 +11,15 @@ namespace L6
         public Method method;
         public DateTime reqStartTime;
 
-        public Dictionary<string, string> extractText;
-        public string correlationVariableName;
+        public Dictionary<string, string> correlations;
+        public string nameForCorrelatedVariable;
         public string correlatedValue;
-        public bool useExtractText = false;
+        public bool extractText = false;
+        public bool useExtractedText = false; 
 
         public string leftBoundary; // the correlation boundary for the target in the *response*
         public string rightBoundary;
+        public string regExPattern; 
        
     }
 }

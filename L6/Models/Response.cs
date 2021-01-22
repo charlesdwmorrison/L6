@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace L6
 {
     public class Response
     {
-
 
         public string reqUri = "";
         public string reqVerb = ""; // GET, POST, PUT, etc. 
@@ -14,7 +11,9 @@ namespace L6
         public string reqUriParams = ""; // This would be for REST calls. 
         public string reqDescription ="";  // E.g., landing/takeoff
         public string extractedText = "";
-        
+        public int responseIdForCurrentClient = 0;
+        public int clientId = 0; 
+
         public int responseId;
         public bool exceptionThrown;
         public string responseStatus = "{Response: 'Not Yet Received.'}";

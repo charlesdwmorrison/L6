@@ -22,7 +22,6 @@ namespace APD_DAP.UnitTests.MockWebServer
 
         public static WebServer Instance { get { return lazy.Value; } }
 
-
         /// <summary>
         /// The response string for our tests. 
         /// </summary>
@@ -32,9 +31,7 @@ namespace APD_DAP.UnitTests.MockWebServer
         {
             Thread.Sleep(5); // just to give a brief amount of latency, so we get something besides zero in the logs. 
             return string.Format("<HTML><BODY>My web page.<br>{0}</BODY></HTML>", DateTime.Now);
-
         }
-
 
 
 
@@ -64,10 +61,8 @@ namespace APD_DAP.UnitTests.MockWebServer
             : this(prefixes, method) { }
 
 
-
         public async void Run()
         {
-
             ThreadPool.SetMinThreads(200, 200);
             ThreadPool.SetMaxThreads(500, 500);
 
