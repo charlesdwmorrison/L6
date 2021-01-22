@@ -1,0 +1,228 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Server\\L6_PWA_GUI.Server.csproj": {}
+  },
+  "projects": {
+    "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\L6_PWA_GUI.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\L6_PWA_GUI.Client.csproj",
+        "projectName": "L6_PWA_GUI.Client",
+        "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\L6_PWA_GUI.Client.csproj",
+        "packagesPath": "C:\\Users\\CMorrison\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CMorrison\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://github.com/nagix/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj": {
+                "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.2, 5.0.2]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Server\\L6_PWA_GUI.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Server\\L6_PWA_GUI.Server.csproj",
+        "projectName": "L6_PWA_GUI.Server",
+        "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Server\\L6_PWA_GUI.Server.csproj",
+        "packagesPath": "C:\\Users\\CMorrison\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CMorrison\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://github.com/nagix/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\L6_PWA_GUI.Client.csproj": {
+                "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Client\\L6_PWA_GUI.Client.csproj"
+              },
+              "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj": {
+                "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj",
+        "projectName": "L6_PWA_GUI.Shared",
+        "projectPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\L6_PWA_GUI.Shared.csproj",
+        "packagesPath": "C:\\Users\\CMorrison\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\L6_FromGitHub\\L6_PWA_GUI\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\CMorrison\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://github.com/nagix/": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

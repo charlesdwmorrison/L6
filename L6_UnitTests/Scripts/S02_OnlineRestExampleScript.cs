@@ -11,7 +11,18 @@ namespace L6_OnlineRestExample
         // http://dummy.restapiexample.com  is a live, online example rest service. 
         private static string urlPrefix = "http://dummy.restapiexample.com/api/v1";
 
-    
+        public S02_OnlineRestExampleScript()
+        {
+
+            // Register correlations by adding another element to this dictionary.
+            // For each correlated value we must register the key name for that value.
+            // This dictionary is inherted from class "Script". 
+            // ToDo: This is not completely kosher that we build the dictionary in the list. 
+            correlationsDict.Add("empId", "Corrolated Value Not Initialized");
+
+        }
+
+
         /// <summary>
         /// Note: ToDo: So far, we make new instances of this script because.
         ///       each client has it's own version of the script. Not 100% sure this is the best way. 
@@ -19,11 +30,7 @@ namespace L6_OnlineRestExample
         /// <returns></returns>
         public  List<Req> BuildRequestList()
         {
-            // Register correlations by adding another element to this dictionary.
-            // For each correlated value we must register the key name for that value.
-            // This dictionary is inherted from class "Script". 
-            // ToDo: This is not completely kosher that we build the dictionary in the list. 
-            correlationsDict.Add("empId", "Corrolated Value Not Initialized");
+
 
             requestList = new List<Req>()
               {
@@ -39,7 +46,7 @@ namespace L6_OnlineRestExample
                     // 2. left and right boundary basic format: (?<=  <left str>    )(.*?)(?=  < rt string> )
                     // 3. Use https://onlinestringtools.com/escape-string to escape what you build in Rubular. 
                     // Loooking for: [{"id":1,"employee_name":"Tiger              
-                    regExPattern = "(?<={\"id\":)(.*?)(?=,\"employee_name)"
+                    regExPattern = "(?<={\"id\":\")(.*?)(?=\",\"employee_name)"
                 },
                 new Req()
                 {

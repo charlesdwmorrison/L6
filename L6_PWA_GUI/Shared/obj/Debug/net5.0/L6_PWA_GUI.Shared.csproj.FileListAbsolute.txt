@@ -1,0 +1,12 @@
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\bin\Debug\net5.0\L6_PWA_GUI.Shared.deps.json
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\bin\Debug\net5.0\L6_PWA_GUI.Shared.dll
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\bin\Debug\net5.0\ref\L6_PWA_GUI.Shared.dll
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\bin\Debug\net5.0\L6_PWA_GUI.Shared.pdb
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.csprojAssemblyReference.cache
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.AssemblyInfoInputs.cache
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.AssemblyInfo.cs
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.csproj.CoreCompileInputs.cache
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.dll
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\ref\L6_PWA_GUI.Shared.dll
+C:\Repos\L6_FromGitHub\L6_PWA_GUI\Shared\obj\Debug\net5.0\L6_PWA_GUI.Shared.pdb

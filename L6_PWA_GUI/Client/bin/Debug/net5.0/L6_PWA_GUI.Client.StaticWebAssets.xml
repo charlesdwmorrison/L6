@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Repos\L6_FromGitHub\L6_PWA_GUI\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Repos\L6_FromGitHub\L6_PWA_GUI\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

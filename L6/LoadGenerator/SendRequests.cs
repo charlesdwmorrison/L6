@@ -45,7 +45,6 @@ namespace L6
         /// <param name="requests"></param>
         public void SendRequest(Script script, Req req)
         {
-
             var method = req.method;
             var uri = req.uri;
             var request = new RestRequest(uri, method);
@@ -100,6 +99,7 @@ namespace L6
             response.responseExceptionMessage = result.ErrorMessage;
             response.responseIdForCurrentClient = responseIdForCurrentClient++;
             response.responseStatsCode = result.StatusCode.ToString();
+            response.responseBody = result.Content;
 
             ResponseDb.conCurResponseDict.TryAdd(Interlocked.Increment(ref responseIdForConcurrentDict), response);
 
@@ -118,27 +118,31 @@ namespace L6
 
             if (responseIdForLog % 25 == 0 || responseIdForLog == 1)
             {
-                writer.WriteToLog(" TtlResps \tClntId \tClntRespId \tTTLB \tThrds \tRPS \tVerb \tURI");
-                writer.WriteToLog(" ======== \t====== \t========== \t==== \t===== \t=== \t==== \t===");
+                writer.WriteToLog(" TtlResps \tThrdId \tThrdRespId \tThrds \tTTLB \tRPS \tVerb \tCode \tURI");
+                writer.WriteToLog(" ======== \t====== \t========== \t==== \t===== \t=== \t==== \t==== \t===");
             }                
 
             writer.WriteToLog(" " + responseIdForLog
               + "\t\t" + response.clientId
               + "\t\t" + response.responseIdForCurrentClient
-              + "\t\t" + response.responseTtlb
-              + "\t\t" + numRestClients
-              + "\t\t" + Math.Round(throughPut, 2)
-              + "\t\t" + req.method
-              + "\t\t" + req.uri
+              + "\t" + numRestClients
+              + "\t" + response.responseTtlb
+              + "\t" + Math.Round(throughPut, 2)
+              + "\t" + req.method
+              + "\t" + response.responseStatsCode
+              + "\t" + req.uri
               );
 
 
             if (req.extractText == true)
             {
+                // Regex for correlation is in the script. 
                 // Correlation Hints:
                 // 1. Copy the resultBody into https://rubular.com/
                 // 2. left and right boundary basic format: (?<=  <left str>    )(.*?)(?=  < rt string> )
                 // 3. Use https://onlinestringtools.com/escape-string to escape what you build in Rubular. 
+                // 4. Remember that the response in Visual Studio might appear with backslashes. However, copying the response
+                //    to text will shows that it does not actually contain back slashes. 
 
                 Regex regEx = new Regex(req.regExPattern);
                 string extractedValue = regEx.Match(result.Content).Value;
