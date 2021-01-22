@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jqNA8UuPPiI0+J+2G7w/WbBHIgp9+SFWh2LO44iGIwEIfCVgxbbnUvSnDoz/HvqiPVAtl8zViVvk8dPUQNKY5w==",
+  "success": true,
+  "projectFilePath": "C:\\Repos\\L6_FromGitHub\\L6\\L6.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CMorrison\\.nuget\\packages\\restsharp\\106.10.1\\restsharp.106.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}
