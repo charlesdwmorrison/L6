@@ -23,6 +23,7 @@ Syntax: (?<=  <left boundary> )(.*?)(?=   < right boundary> )
 
 Scripts in L6 are classes:
 
+```
     public class S02_OnlineRestExampleScript : Script
     {
         public  List<Req> BuildRequestList()
@@ -67,9 +68,12 @@ Scripts in L6 are classes:
             return requestList;
         }
     }
+```
 
 A script object is passed to a user controller class, which launches threads (in the form of C# tasks).
 "AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
+
+```
 
         public async Task AddUsersByRampUp(Script script = null, int newUserEvery = 2000, int maxUsers = 2, long testDurationSecs = 360)
         {
@@ -86,10 +90,12 @@ A script object is passed to a user controller class, which launches threads (in
             }
             await Task.WhenAll(tasksInProgress);
         }
+```
 
 To make a multi user test, you just put the above two components together. 
 You call the BuildRequestList() method of the script and pass it to the user controller:
 
+```
         [Test]
         public async Task S02_OnlineRest_3_Users()
         {
@@ -104,6 +110,7 @@ You call the BuildRequestList() method of the script and pass it to the user con
 
             Assert.IsTrue(perfMetrics["totalTestDuration"] < 180, "Expected:Test Duration less than 2 minutes");
         }
+```
 
 And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results.
 
