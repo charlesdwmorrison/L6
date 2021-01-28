@@ -102,20 +102,20 @@ To make a multi user test, you just put the above two components together.
 You call the BuildRequestList() method of the script and pass it to the user controller:
 
 ```
-        [Test]
-        public async Task S02_OnlineRest_3_Users()
-        {
-            S02_OnlineRestExampleScript onlineRestExampleScript = new S02_OnlineRestExampleScript();
-            List<Req> requestList = onlineRestExampleScript.BuildRequestList();
+[Test]
+public async Task S02_OnlineRest_3_Users()
+{
+    S02_OnlineRestExampleScript onlineRestExampleScript = new S02_OnlineRestExampleScript();
+    List<Req> requestList = onlineRestExampleScript.BuildRequestList();
 
-            UserController uc = new UserController();
-            await Task.Run(() => uc.AddUsersByRampUp(script: onlineRestExampleScript, newUserEvery: 10000, maxUsers: 3, testDurationSecs: 30));
+    UserController uc = new UserController();
+    await Task.Run(() => uc.AddUsersByRampUp(script: onlineRestExampleScript, newUserEvery: 10000, maxUsers: 3, testDurationSecs: 30));
 
-            PerfMetrics pvc = new PerfMetrics();
-            Dictionary<string, double> perfMetrics = pvc.CalcualteAllMetrics(ResponseDb.conCurResponseDict);
+    PerfMetrics pm = new PerfMetrics();
+    Dictionary<string,double> perfMetrics = pm.CalcualteAllMetrics(ResponseDb.conCurResponseDict);
 
-            Assert.IsTrue(perfMetrics["totalTestDuration"] < 180, "Expected:Test Duration less than 2 minutes");
-        }
+    Assert.IsTrue(perfMetrics["avgResponseTime"] < 3, "Expected:Avg. Response time < 3 seconds");
+}
 ```
 
 And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results and which you can assert against to determine if the test passed or failed.
