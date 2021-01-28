@@ -1,10 +1,11 @@
 # L6
 L6 is a C# .Net Core console-based load generator. It can be used in CI pipelines and is a replacement for the deprecated Visual Studio Load Test tool.
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.
-Advancements over a tool like Netling include:
+Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
 - .Net core (this could be run on Linux)
 - Correlation so that you can add data.
 - More than one URL or endpoint (scripts consisting of multiple URLs can be used, and user flows created)
+- Can be run in a DevOps pipeline. It basically a CI/CD tool for performance tests. 
 
 ## Features
 - .Net Core
