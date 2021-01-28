@@ -1,8 +1,6 @@
 # L6
 L6 is a C# .Net Core load generator designed to be used in CI pipelines using standard test agent machines.  
-
 It started life as replacement for the deprecated Visual Studio Load Test tool.  
-
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.  
 
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
@@ -22,7 +20,7 @@ L6 is basically a CI/CD tool for performance testing.
 
 ## Usage
 ### Scripts
-L6 has "scripts" just like LoadRunner or Visual Studio load tests.
+L6 has "scripts" consisting of multiple URLs just like LoadRunner or Visual Studio load tests.
 Currently, you have to make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
 
 Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  
