@@ -11,21 +11,21 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 
 L6 is basically a CI/CD tool for performance testing. 
 
-## Features
-- .Net Core
+## Features/Compoents
+- .Net Core 5.0
 - RestSharp 
-- High performance logging class to log response time, throughput and other metrics to a text file.
+- High-performance logging class to log response time, throughput and other metrics to a text file.
 - Perf Metrics class to calculate response time average, percentiles and throughput.
 - Assertions can be performed against response time or thorughput using MSTest, NUnit or any other testing framework.
 - Do not have to leave Visual Studio to create a script. 
 - Easier to understand script syntax compared to [K6](https://medium.com/swlh/beginners-guide-to-load-testing-with-k6-ff155885b6db) or some other tools. 
-- Scripts writtien in familar C# code, not JavaScript.
+- Scripts written in familiar C# code, not JavaScript.
 - Open Source and easily customizable.
 
 ## Usage
 ### Scripts
 More than just a "URL tester," L6 has "scripts" consisting of multiple URLs just like LoadRunner or Visual Studio load tests.
-Currently, you have to make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
+Currently, we must make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
 
 Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  
 
@@ -126,12 +126,12 @@ public async Task S02_OnlineRest_3_Users()
 
 As you can see from the above, L6 also has a PerfMetrics class which performs calculations on the results and which you can assert against to determine if the test passed or failed.
 
-There is also a class to send the requests which is a simple RestSharp client. 
-The send request class also performs the correlation specified in the script.
+There is also a RestSharp client class which sends the requests and performs the correlations defined in the script.
 
 
 ## Planned Enhancements
 - GUI with a chart to show response time and throughput. This will be done as [Blazor WebAssembly Progressive Web App](https://devblogs.microsoft.com/visualstudio/building-a-progressive-web-app-with-blazor).
+- Examples showing how to use a CSV file as data input.
 - Create scripts programmatically by importing .har files. 
 - Run multiple scripts at the same to create a load scenario.
 - Create a console version in order to execute from the command line. (I'm not 100% sure this is a goal.)
