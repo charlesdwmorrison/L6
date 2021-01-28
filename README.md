@@ -25,7 +25,7 @@ Currently, you have to make the scripts by hand, but its easy. You just add the 
 
 Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  
 
-Syntax:  
+Correlation RegEx Syntax:  
 ```
 (?<=  <left boundary> )(.*?)(?=   < right boundary> )
 ```
@@ -100,8 +100,8 @@ public async Task AddUsersByRampUp(Script script = null, int newUserEvery = 2000
 }
 ```
 ### Test Execution
-To make a multi-user test, you just put the above two components together. 
-You call the BuildRequestList() method of the script and pass it to the user controller:
+To make a multi-user test, you just put the above two components together.
+You call the BuildRequestList() method of the script and pass the script object to the user controller. Then add an assertion:
 
 ```
 [Test]
