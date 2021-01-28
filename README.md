@@ -128,7 +128,7 @@ The send request class also performs the correlation specified in the script.
 
 ## Future Enhancements
 - Create scripts programmatically by importing .har files. 
-- GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App.
+- GUI with a chart to show response time and throughput. This will be done as [Blazor WebAssembly Progressive Web App](https://devblogs.microsoft.com/visualstudio/building-a-progressive-web-app-with-blazor).
 - Run multiple scripts at the same to create a load scenario.
-- Create an actual console. 
+- Create a console version in order to execute from the command line. (I'm not 100% sure this is a goal.)
 - Test Agents to use more than one machine (this is a distant goal).
