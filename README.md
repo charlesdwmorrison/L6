@@ -4,15 +4,23 @@ The idea is to execute multi-threaded performance/load tests as easily as functi
 Advancements over a tool like Netling include:
 - .Net core (this could be run on Linux)
 - Correlation so that you can add data.
+- More than one URL or endpoint (scripts consisting of multiple URLs can be used, and user flows created)
 
 ## Features
 - .Net Core
 - RestSharp 
 - High performance logging class to log response time, throughput and other metrics to a text file.
 - Perf Metrics class to calculate response time average, percentiles and throughput.
-- Assertions can be done with MSTest, NUnit or any other testing framework.
+- Assertions can be performed against response time or thorughput using MSTest, NUnit or any other testing framework.
 
+## Usage
 L6 has "scripts" just like LoadRunner or Visual Studio load tests.
+Currently, you have to make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
+
+Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.
+Syntax: (?<=  <left boundary> )(.*?)(?=   < right boundary> )
+
+
 Scripts in L6 are classes:
 
     public class S02_OnlineRestExampleScript : Script
@@ -60,7 +68,8 @@ Scripts in L6 are classes:
         }
     }
 
-A script object is passed to a user controller class, whcih launches threads. "AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
+A script object is passed to a user controller class, which launches threads (in the form of C# tasks).
+"AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
 
         public async Task AddUsersByRampUp(Script script = null, int newUserEvery = 2000, int maxUsers = 2, long testDurationSecs = 360)
         {
@@ -78,7 +87,8 @@ A script object is passed to a user controller class, whcih launches threads. "A
             await Task.WhenAll(tasksInProgress);
         }
 
-To make a multi user test, you just put the above two components together. You call the the "BuildRequestList()" method of the script and pass it to the Usercontroller.
+To make a multi user test, you just put the above two components together. 
+You call the BuildRequestList() method of the script and pass it to the user controller:
 
         [Test]
         public async Task S02_OnlineRest_3_Users()
@@ -95,12 +105,13 @@ To make a multi user test, you just put the above two components together. You c
             Assert.IsTrue(perfMetrics["totalTestDuration"] < 180, "Expected:Test Duration less than 2 minutes");
         }
 
-And as you can see from the above, there is a PerfMetrics class which performs calculations on the results.
+And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results.
 
-There is a class to send the requests which is a simple RestSharp client. The sent request class also helps with correlation. 
+There is also a class to send the requests which is a simple RestSharp client. 
+The send request class also performs the correlation specified in the script.
 
 
 ## Future Enhancements
-- Be able to import .har files and create a script automatically. 
-- GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App
-- Run multiple scripts at the same to create a scenario.
+- Create a script programmatically by importing .har files. 
+- GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App.
+- Run multiple scripts at the same to create a load scenario.
