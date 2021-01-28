@@ -9,7 +9,7 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 - .Net core (L6 can be executed on Linux or a Mac).
 - Correlation so that you can add data and vary the body or URI.
 - Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs, and can be built into user flows of any length.
-- The entire flow can be tested in a DevOps pipeline and provide a pass/fail result. 
+- An entire "user flow" can be tested in a DevOps pipeline. L6 will provide a pass/fail result. 
 
 L6 is basically a CI/CD tool for performance testing. 
 
