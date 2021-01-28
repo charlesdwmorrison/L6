@@ -6,7 +6,6 @@ Advancements over a tool like Netling include:
 - Correlation so that you can add data.
 
 ## Features
----------
 - .Net Core
 - RestSharp 
 - High performance logging class to log response time, throughput and other metrics to a text file.
@@ -102,7 +101,6 @@ There is a class to send the requests which is a simple RestSharp client. The se
 
 
 ## Future Enhancements
--------------------
 - Be able to import .har files and create a script automatically. 
 - GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App
 - Run multiple scripts at the same to create a scenario.
