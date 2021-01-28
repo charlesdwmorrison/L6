@@ -2,9 +2,9 @@
 L6 is a C# .Net Core console-based load generator. It can be used in CI pipelines and is a replacement for the deprecated Visual Studio Load Test tool.
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
-- .Net core (this could be run on Linux)
+- .Net core (L6 can be executed on Linux or a Mac).
 - Correlation so that you can add data.
-- More than one URL or endpoint (scripts consisting of multiple URLs can be used, and user flows created)
+- More than one URL or endpoint (scripts consisting of multiple URLs can be used, and user flows created).
 - Can be run in a DevOps pipeline. It basically a CI/CD tool for performance tests. 
 
 ## Features
@@ -15,14 +15,19 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 - Assertions can be performed against response time or thorughput using MSTest, NUnit or any other testing framework.
 
 ## Usage
+### Scripts
 L6 has "scripts" just like LoadRunner or Visual Studio load tests.
 Currently, you have to make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
 
-Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.
-Syntax: (?<=  <left boundary> )(.*?)(?=   < right boundary> )
+Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  
+
+Syntax:  
+```
+(?<=  <left boundary> )(.*?)(?=   < right boundary> )
+```
 
 
-Scripts in L6 are classes:
+Scripts in L6 are classes with one method, BuildRequest(), which returns a list of the requests you want to execute.
 
 ```
     public class S02_OnlineRestExampleScript : Script
@@ -70,7 +75,7 @@ Scripts in L6 are classes:
         }
     }
 ```
-
+### Users (Threads)
 A script object is passed to a user controller class, which launches threads (in the form of C# tasks).
 "AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
 
@@ -92,7 +97,7 @@ A script object is passed to a user controller class, which launches threads (in
             await Task.WhenAll(tasksInProgress);
         }
 ```
-
+### Test Execution
 To make a multi user test, you just put the above two components together. 
 You call the BuildRequestList() method of the script and pass it to the user controller:
 
@@ -113,7 +118,7 @@ You call the BuildRequestList() method of the script and pass it to the user con
         }
 ```
 
-And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results.
+And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results and which you can assert against to determine if the test passed or failed.
 
 There is also a class to send the requests which is a simple RestSharp client. 
 The send request class also performs the correlation specified in the script.
