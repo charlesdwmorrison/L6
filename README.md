@@ -1,5 +1,6 @@
-# L6 - A Modern, DevOps Performance Testing Tool
-L6 is a C# .Net Core load generator designed to be used in CI pipelines using standard test agent machines.  
+# L6 - A DevOps CI/CD Performance Test Tool
+
+L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines using standard test agent machines.  
 It started life as replacement for the deprecated Visual Studio Load Test tool.  
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.  
 
