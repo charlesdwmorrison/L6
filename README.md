@@ -1,14 +1,15 @@
 # L6 - A DevOps CI/CD Performance Test Tool
 
-L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines using standard test agent machines.  
-It started life as replacement for the deprecated Visual Studio Load Test tool.  
+L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines.
+L6 launches multiple threads, but in the manner of a functional, MSTest or NUnit test. It does this using standard DevOps functional test agent machines.
+L6 started life as replacement for the deprecated Visual Studio Load Test tool.  
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.  
 
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
 - .Net core (L6 can be executed on Linux or a Mac).
 - Correlation so that you can add data and vary the body or URI.
-- Ability to test more than one URL or endpoint at a time. Scripts consisting of multiple URLs can be used, and user flows created.
-- Can be run in a DevOps pipeline.  
+- Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs, and can be built into user flows of any length.
+- The entire flow can be tested in a DevOps pipeline and provide a pass/fail result. 
 
 L6 is basically a CI/CD tool for performance testing. 
 
@@ -133,6 +134,7 @@ There is also a RestSharp client class which sends the requests and performs the
 ## Planned Enhancements
 - GUI with a chart to show response time and throughput. This will be done as [Blazor WebAssembly Progressive Web App](https://devblogs.microsoft.com/visualstudio/building-a-progressive-web-app-with-blazor).
 - Examples showing how to use a CSV file as data input.
+- Examples of how to assert against a particular URL within a script.
 - Create scripts programmatically by importing .har files. 
 - Run multiple scripts at the same to create a load scenario.
 - Create a console version in order to execute from the command line. (I'm not 100% sure this is a goal.)
