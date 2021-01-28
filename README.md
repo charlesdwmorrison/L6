@@ -5,11 +5,11 @@ Advancements over a tool like Netling include:
 - .Net core (this could be run on Linux)
 - Correlation so that you can add data.
 
-##Features
+## Features
 ---------
 - .Net Core
 - RestSharp 
-- High performance logging class to logs response time, throughput and other metrics to a text file.
+- High performance logging class to log response time, throughput and other metrics to a text file.
 - Perf Metrics class to calculate response time average, percentiles and throughput.
 - Assertions can be done with MSTest, NUnit or any other testing framework.
 
@@ -82,7 +82,7 @@ A script object is passed to a user controller class, whcih launches threads. "A
 To make a multi user test, you just put the above two components together. You call the the "BuildRequestList()" method of the script and pass it to the Usercontroller.
 
         [Test]
-        public async Task S02_OnlineRest_10_Users_10IterationsAsync()
+        public async Task S02_OnlineRest_3_Users()
         {
             S02_OnlineRestExampleScript onlineRestExampleScript = new S02_OnlineRestExampleScript();
             List<Req> requestList = onlineRestExampleScript.BuildRequestList();
@@ -101,7 +101,7 @@ And as you can see from the above, there is a PerfMetrics class which performs c
 There is a class to send the requests which is a simple RestSharp client. The sent request class also helps with correlation. 
 
 
-##Future Enhancements
+## Future Enhancements
 -------------------
 - Be able to import .har files and create a script automatically. 
 - GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App
