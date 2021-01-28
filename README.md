@@ -1,11 +1,17 @@
 # L6
-L6 is a C# .Net Core console-based load generator. It can be used in CI pipelines and is a replacement for the deprecated Visual Studio Load Test tool.
-The idea is to execute multi-threaded performance/load tests as easily as functional tests.
+L6 is a C# .Net Core load generator designed to be used in CI pipelines using standard test agent machines.  
+
+It started life as replacement for the deprecated Visual Studio Load Test tool.  
+
+The idea is to execute multi-threaded performance/load tests as easily as functional tests.  
+
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
 - .Net core (L6 can be executed on Linux or a Mac).
-- Correlation so that you can add data.
-- More than one URL or endpoint (scripts consisting of multiple URLs can be used, and user flows created).
-- Can be run in a DevOps pipeline. It basically a CI/CD tool for performance tests. 
+- Correlation so that you can add data and vary the body or URI.
+- Ability to test more than one URL or endpoint at a time. Scripts consisting of multiple URLs can be used, and user flows created.
+- Can be run in a DevOps pipeline.  
+
+L6 is basically a CI/CD tool for performance testing. 
 
 ## Features
 - .Net Core
@@ -26,8 +32,7 @@ Syntax:
 (?<=  <left boundary> )(.*?)(?=   < right boundary> )
 ```
 
-
-Scripts in L6 are classes with one method, BuildRequest(), which returns a list of the requests you want to execute.
+Scripts in L6 are classes with one method, BuildRequest(). BuildRequest() returns a list of the requests you want to execute.
 
 ```
     public class S02_OnlineRestExampleScript : Script
@@ -80,25 +85,24 @@ A script object is passed to a user controller class, which launches threads (in
 "AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
 
 ```
-
-        public async Task AddUsersByRampUp(Script script = null, int newUserEvery = 2000, int maxUsers = 2, long testDurationSecs = 360)
+public async Task AddUsersByRampUp(Script script = null, int newUserEvery = 2000, int maxUsers = 2, long testDurationSecs = 360)
+{
+    var tasksInProgress = new List<Task>();
+    testStopWatch.Start();
+    while ((testStopWatch.ElapsedMilliseconds < testDurationSecs * 1000) & (Interlocked.Increment(ref numThreads) <= maxUsers)) // loop as long as load test lasts. 
+    {
+        var t = Task.Run(async () =>
         {
-            var tasksInProgress = new List<Task>();
-            testStopWatch.Start();
-            while ((testStopWatch.ElapsedMilliseconds < testDurationSecs * 1000) & (Interlocked.Increment(ref numThreads) <= maxUsers)) // loop as long as load test lasts. 
-            {
-                var t = Task.Run(async () =>
-                {
-                    await TestPattern(script, numThreads, testDurationSecs); 
-                });
-                tasksInProgress.Add(t);
-                Thread.Sleep(newUserEvery);
-            }
-            await Task.WhenAll(tasksInProgress);
-        }
+            await TestPattern(script, numThreads, testDurationSecs); 
+        });
+        tasksInProgress.Add(t);
+        Thread.Sleep(newUserEvery);
+    }
+    await Task.WhenAll(tasksInProgress);
+}
 ```
 ### Test Execution
-To make a multi user test, you just put the above two components together. 
+To make a multi-user test, you just put the above two components together. 
 You call the BuildRequestList() method of the script and pass it to the user controller:
 
 ```
@@ -118,13 +122,15 @@ public async Task S02_OnlineRest_3_Users()
 }
 ```
 
-And as you can see from the above, L6 has a PerfMetrics class which performs calculations on the results and which you can assert against to determine if the test passed or failed.
+And as you can see from the above, L6 also has a PerfMetrics class which performs calculations on the results and which you can assert against to determine if the test passed or failed.
 
 There is also a class to send the requests which is a simple RestSharp client. 
 The send request class also performs the correlation specified in the script.
 
 
 ## Future Enhancements
-- Create a script programmatically by importing .har files. 
+- Create scripts programmatically by importing .har files. 
 - GUI with a chart to show response time and throughput. This will be done as Blazor Progressive Web App.
 - Run multiple scripts at the same to create a load scenario.
+- Create an actual console. 
+- Test Agents to use more than one machine (this is a distant goal).
