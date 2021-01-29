@@ -10,7 +10,7 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 - [Correlation](http://www.methodsandtools.com/archive/loadtesterrors1.php) so that you can "chain" requests together or build user flows.
 - Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs. 
 - A script (a list of different requests) can be built into a user flow of any length.
-- L6 provides a pass/fail result dending on service level agreements set by the tester. 
+- L6 provides a pass/fail result depending on service level agreements set by the tester. 
 
 As a CI/CD tool, L6 is an easy way to execute multiple threads against an application in order to catch (in an automated, DevOps manner) multi-threading bugs, such as improperly locked variables, [true scalability](https://essentialcomputing.wordpress.com/2016/11/13/a-practical-contribution-to-the-meaning-of-scalability-measuring-code-scalability/), and, of course, response time.  
 As long as your are running multiple threads, you might as well also investigate your database indexes (using the [QueryStore](https://www.red-gate.com/simple-talk/sql/database-administration/the-sql-server-2016-query-store-accessing-query-store-information-using-dmvs/) and [compilation times](https://essentialcomputing.wordpress.com/2016/10/06/measuring-compilation-time-in-sql-server/).
