@@ -135,8 +135,9 @@ There is also a RestSharp client class which sends the requests and performs the
 ## Planned Enhancements
 - GUI with a chart to show response time and throughput. This will be done as [Blazor WebAssembly Progressive Web App](https://devblogs.microsoft.com/visualstudio/building-a-progressive-web-app-with-blazor).
 - Examples showing how to use a CSV file as data input.
-- Examples of how to assert against a particular URL within a script.
-- Create scripts programmatically by importing .har files. 
-- Run multiple scripts at the same to create a load scenario.
+- Script sample of non-REST application.
+- Examples of how to assert against a particular URL within a script. 
+- Run multiple scripts at the same to create a load scenario of multiple user flows.
+- Create scripts programmatically by importing .har files.
 - Create a console version in order to execute from the command line. (I'm not 100% sure this is a goal.)
 - Test Agents to use more than one machine (this is a distant goal).
