@@ -1,17 +1,20 @@
 # L6 - A DevOps CI/CD Performance Test Tool
 
-L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines.  
+L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines.   
+L6 began life as replacement for the deprecated Visual Studio Load Test tool.   
+The idea is to execute multi-threaded performance/load tests as easily as functional tests, and do this in a build or release pipeline.  
 L6 launches multiple threads, but in the manner of a functional, MSTest or NUnit test. It generates load using standard DevOps functional test agent machines.  
-L6 started life as replacement for the deprecated Visual Studio Load Test tool.   
-The idea is to execute multi-threaded performance/load tests as easily as functional tests.   
 
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
 - .Net core (L6 can be executed on Linux or a Mac).
 - Correlation so that you can add data and vary the body or URI.
-- Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs, and can be built into user flows of any length.
-- An entire "user flow" can be tested in a DevOps pipeline. L6 will provide a pass/fail result. 
+- Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs. 
+- A script (a list of different requests) can be built into a user flow of any length.
+- L6 provides a pass/fail result dending on service level agreements set by the tester. 
 
-L6 is basically a CI/CD tool for performance testing. 
+As a CI/CD tool, L6 is an easy way to execute multiple threads against an application in order to catch (in an automated, DevOps manner) multi-threading bugs, such as improperly locked variables.  
+L6 therefore helps to "shift left" with performance testing, making the process of performance/load testing much more agile. 
+L6 can also be used as a desktop load generator to execute heavier loads. 
 
 ## Features/Compoents
 - .Net Core 5.0
