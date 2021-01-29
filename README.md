@@ -27,15 +27,9 @@ L6 is basically a CI/CD tool for performance testing.
 ## Usage
 ### Scripts
 More than just a "URL tester," L6 has "scripts" consisting of multiple URLs just like LoadRunner or Visual Studio load tests.
-Currently, we must make the scripts by hand, but its easy. You just add the requests to a C# List<> collection:
+Currently, we must make the scripts by hand (see future enhancements below). But creatiing a script is easy. You just add the requests to a C# List<> collection:
 
-Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  
-
-Correlation RegEx Syntax:  
 ```
-(?<=  <left boundary> )(.*?)(?=   < right boundary> )
-```
-
 Scripts in L6 are classes with one method, BuildRequest(). BuildRequest() returns a list of the requests you want to execute.
 
 ```
@@ -84,6 +78,14 @@ Scripts in L6 are classes with one method, BuildRequest(). BuildRequest() return
         }
     }
 ```
+
+Correlation (using the response of one request as data for the next) is accomplished by means of regular expressions.  You can see an example of it in the above script. 
+
+Correlation RegEx Syntax:  
+```
+(?<=  <left boundary> )(.*?)(?=   < right boundary> )  
+    
+    
 ### Users (Threads)
 A script object is passed to a user controller class, which launches threads (in the form of C# tasks).
 "AddUsersByRampUp()" takes any script, then launches a new instance of it every X number of seconds:
