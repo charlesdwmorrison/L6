@@ -7,7 +7,7 @@ L6 launches multiple threads, but in the manner of a functional, MSTest or NUnit
 
 Advancements over vernerable tools such as [Netling](https://github.com/hallatore/Netling) include:
 - .Net core (L6 can be executed on Linux or a Mac).
-- Correlation so that you can add data and vary the body or URI.
+- [Correlation](http://www.methodsandtools.com/archive/loadtesterrors1.php) so that you can "chain" requests together or build user flows.
 - Ability to test more than one URL or endpoint in the test. Scripts can consist of multiple URLs. 
 - A script (a list of different requests) can be built into a user flow of any length.
 - L6 provides a pass/fail result dending on service level agreements set by the tester. 
