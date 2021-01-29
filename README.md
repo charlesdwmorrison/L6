@@ -12,7 +12,7 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 - A script (a list of different requests) can be built into a user flow of any length.
 - L6 provides a pass/fail result depending on service level agreements set by the tester. 
 
-As a CI/CD tool, L6 is an easy way to execute multiple threads against an application in order to catch (in an automated, DevOps manner) multi-threading bugs, such as improperly locked variables, [true scalability](https://essentialcomputing.wordpress.com/2016/11/13/a-practical-contribution-to-the-meaning-of-scalability-measuring-code-scalability/), and, of course, response time.  
+As a CI/CD tool, L6 provides an easy way to execute multiple threads against an application in order to catch (in an automated, DevOps manner) multi-threading bugs, such as improperly locked variables, [true scalability](https://essentialcomputing.wordpress.com/2016/11/13/a-practical-contribution-to-the-meaning-of-scalability-measuring-code-scalability/), and, of course, response time.  
 Since L6 allows you to easily execute multiple threads, L6 Puts power into developer hands, and allows any SDE or SDET to investigate:   
 - database [indexes](https://www.red-gate.com/simple-talk/sql/performance/tune-your-indexing-strategy-with-sql-server-dmvs/) (using the [QueryStore](https://www.red-gate.com/simple-talk/sql/database-administration/the-sql-server-2016-query-store-accessing-query-store-information-using-dmvs/)), 
 - [DB compilation times](https://essentialcomputing.wordpress.com/2016/10/06/measuring-compilation-time-in-sql-server/)
