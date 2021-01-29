@@ -17,6 +17,7 @@ The ability to easily launch multiple threads in a production-like user workflow
 - database [indexes](https://www.red-gate.com/simple-talk/sql/performance/tune-your-indexing-strategy-with-sql-server-dmvs/) (using the [QueryStore](https://www.red-gate.com/simple-talk/sql/database-administration/the-sql-server-2016-query-store-accessing-query-store-information-using-dmvs/)), 
 - [DB compilation times](https://essentialcomputing.wordpress.com/2016/10/06/measuring-compilation-time-in-sql-server/)
 - and [deadlocks](https://www.red-gate.com/simple-talk/sql/database-administration/handling-deadlocks-in-sql-server/).  
+
 all can be caught earlier in the software development cycle. Imagine! No more performance surprises after launch!
 L6 therefore helps to "shift left" with performance testing, making the process of performance/load testing much more agile. 
 L6 can also be used as a desktop load generator to execute heavier loads. 
