@@ -13,10 +13,11 @@ Advancements over vernerable tools such as [Netling](https://github.com/hallator
 - L6 provides a pass/fail result depending on service level agreements set by the tester. 
 
 As a CI/CD tool, L6 provides an easy way to execute multiple threads against an application in order to catch (in an automated, DevOps manner) multi-threading bugs, such as improperly locked variables, [true scalability](https://essentialcomputing.wordpress.com/2016/11/13/a-practical-contribution-to-the-meaning-of-scalability-measuring-code-scalability/), and, of course, response time.  
-The ability to easily launch multiple threads in a production-like user workflow allows any SDE or SDET to investigate the effects of multple threads all the way through the software stack:   
+The ability to easily launch multiple threads in a production-like user workflow allows any SDE or SDET to investigate the effects of multple threads all the way through the software stack, including the database, where the SDE/SDET can investigate
 - database [indexes](https://www.red-gate.com/simple-talk/sql/performance/tune-your-indexing-strategy-with-sql-server-dmvs/) (using the [QueryStore](https://www.red-gate.com/simple-talk/sql/database-administration/the-sql-server-2016-query-store-accessing-query-store-information-using-dmvs/))
 - [DB compilation times](https://essentialcomputing.wordpress.com/2016/10/06/measuring-compilation-time-in-sql-server/)
 - [deadlocks](https://www.red-gate.com/simple-talk/sql/database-administration/handling-deadlocks-in-sql-server/)
+- [DB Index Management Strategies](https://stackoverflow.com/questions/5152272/what-is-the-ideal-indexing-strategy-for-sql-server)
 
 all can be caught earlier in the software development cycle. Imagine! No more performance surprises after launch!   
 L6 therefore helps to "shift left" with performance testing, making the process of performance/load testing much more agile.   
