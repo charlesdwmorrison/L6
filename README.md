@@ -26,7 +26,7 @@ L6 is basically a CI/CD tool for performance testing.
 
 ## Usage
 ### Scripts
-More than just a single URL test tool, L6 scripts consist of multiple URLs just like LoadRunner or Visual Studio load tests.
+More than just a single URL test tool, L6 scripts consist of multiple URLs just like LoadRunner or Visual Studio, JMeter, K6, etc. This enables L6 to execute real user flows (scripts).
 Currently, we must make the scripts by hand (see future enhancements below). But creatiing a script is easy. You just add the requests to a C# List<> collection:
 
 ```
