@@ -1,7 +1,7 @@
 # L6 - A DevOps CI/CD Performance Test Tool
 
 L6 is a C# .Net Core lightweight load generator designed to be used in CI pipelines.  
-L6 launches multiple threads, but in the manner of a functional, MSTest or NUnit test. It does this using standard DevOps functional test agent machines.  
+L6 launches multiple threads, but in the manner of a functional, MSTest or NUnit test. It generates load using standard DevOps functional test agent machines.  
 L6 started life as replacement for the deprecated Visual Studio Load Test tool.   
 The idea is to execute multi-threaded performance/load tests as easily as functional tests.   
 
@@ -26,7 +26,7 @@ L6 is basically a CI/CD tool for performance testing.
 
 ## Usage
 ### Scripts
-More than just a "URL tester," L6 has "scripts" consisting of multiple URLs just like LoadRunner or Visual Studio load tests.
+More than just a "URL tester," L6 scripts consist of multiple URLs just like LoadRunner or Visual Studio load tests.
 Currently, we must make the scripts by hand (see future enhancements below). But creatiing a script is easy. You just add the requests to a C# List<> collection:
 
 ```
